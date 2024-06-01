@@ -19,3 +19,17 @@ from sklearn.svm import SVC
 url = "~/Desktop/ML-for-beginners/data/raw/iris.csv"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = read_csv(url, names=names)
+
+## SUMMARIZING DATA
+
+# Number of rows (instances) + columns (attributes)
+print(dataset.shape)
+
+# First 20 rows of data
+print(dataset.head(20))
+
+# Statistical summary of each column
+print(dataset.describe())
+
+# Class distribution of number of rows per class
+print(dataset.groupby('class').size())
