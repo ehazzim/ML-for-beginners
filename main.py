@@ -33,3 +33,18 @@ print(dataset.describe())
 
 # Class distribution of number of rows per class
 print(dataset.groupby('class').size())
+
+## DATA VISUALIZATION
+
+# Plot: box and whiskers
+dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+plt.show()
+
+# Plot: histogram
+dataset.hist()
+plt.show()
+
+# Plot: scatterplots
+scatter_matrix(dataset)
+plt.show() # high correlation + predictable data
+
