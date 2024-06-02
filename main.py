@@ -20,6 +20,7 @@ url = "~/Desktop/ML-for-beginners/data/raw/iris.csv"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = read_csv(url, names=names)
 
+
 ## SUMMARIZING DATA
 
 # Number of rows (instances) + columns (attributes)
@@ -33,6 +34,7 @@ print(dataset.describe())
 
 # Class distribution of number of rows per class
 print(dataset.groupby('class').size())
+
 
 ## DATA VISUALIZATION
 
@@ -48,3 +50,16 @@ plt.show()
 scatter_matrix(dataset)
 plt.show() # high correlation + predictable data
 
+
+## EVALUATION OF DATA
+
+# Split-out validation dataset
+array = dataset.values
+X = array[:,0:4]
+y = array[:,4]
+X_train, X_validation, Y_train, Y_validation = train_test_split(X, y, test_size=0.20, random_state=1)
+
+"""
+Training data now in X_train and Y_train for preparing models
+and X_validation and Y_validation sets to use later.
+"""
