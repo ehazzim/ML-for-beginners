@@ -73,6 +73,7 @@ models.append(('LDA', LinearDiscriminantAnalysis()))
 models.append(('KNN', KNeighborsClassifier()))
 models.append(('CART', DecisionTreeClassifier()))
 models.append(('NB', GaussianNB()))
+# model with largest estimated accuracy score
 models.append(('SVM', SVC(gamma='auto')))
 
 # Evaluate each model in turn
