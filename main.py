@@ -64,6 +64,7 @@ Training data now in X_train and Y_train for preparing models
 and X_validation and Y_validation sets to use later.
 """
 
+
 ## BUILD AND EVALUATE MODELS
 
 # Spot Check Algorithms
@@ -85,3 +86,8 @@ for name, model in models:
  results.append(cv_results)
  names.append(name)
  print('%s: %f (%f)' % (name, cv_results.mean(), cv_results.std()))
+
+ # Compare algorithms
+plt.boxplot(results, labels=names)
+plt.title('Algorithm Comparison')
+plt.show()
